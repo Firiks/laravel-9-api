@@ -80,7 +80,7 @@ class InvoiceController extends Controller
    */
   public function update(UpdateInvoiceRequest $request, Invoice $invoice)
   {
-    //
+    return $invoice->update($request->all());
   }
 
   /**

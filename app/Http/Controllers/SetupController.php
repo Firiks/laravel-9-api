@@ -8,15 +8,19 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * One time setup for admin
+ */
 class SetupController extends Controller
 {
   public function setup(Request $request) {
+
     $credentials = [
       'email' => 'tst@tst.com',
       'password' => 'password'
     ];
 
-   if( !Auth::attempt($credentials) ) {
+    if( !Auth::attempt($credentials) ) {
       $user = new User();
 
       $user->name = 'Admin';
@@ -37,6 +41,6 @@ class SetupController extends Controller
           'basic' => $basicToken->plainTextToken,
         ];
       }
-   }
+    }
   }
 }
