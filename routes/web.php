@@ -14,8 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/{whatever}', function () {
-//   return 'This is API only service.';
-// })->where('whatever', '.*?');
-
 Route::get('/setup', [SetupController::class, 'setup'])->name('user.setup');
